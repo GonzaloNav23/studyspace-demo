@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StudySpace - Find your perfect study spot</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Arial, sans-serif; background: #f8fafc; color: #0f2a44; }
+.header { background: #0f2a44; color: white; padding: 20px 30px; display: flex; justify-content: space-between; align-items: center; }
+.header h1 { font-size: 24px; }
+.header span { color: #14b8a6; }
+.container { max-width: 1200px; margin: 0 auto; padding: 30px; }
+.hero { text-align: center; padding: 60px 20px; }
+.hero h2 { font-size: 42px; margin-bottom: 15px; }
+.hero p { font-size: 18px; color: #64748b; max-width: 600px; margin: 0 auto 30px; }
+.btn { background: #14b8a6; color: white; border: none; padding: 15px 40px; font-size: 16px; border-radius: 30px; cursor: pointer; transition: all 0.3s; }
+.btn:hover { background: #0e9e8f; transform: translateY(-2px); }
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin: 50px 0; }
+.feature-card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); text-align: center; transition: transform 0.3s; }
+.feature-card:hover { transform: translateY(-5px); }
+.feature-card .icon { font-size: 40px; margin-bottom: 15px; }
+.feature-card h3 { font-size: 20px; margin-bottom: 10px; }
+.feature-card p { color: #64748b; font-size: 14px; line-height: 1.6; }
+.demo-section { background: white; border-radius: 20px; padding: 40px; margin: 40px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+.demo-section h3 { font-size: 24px; margin-bottom: 20px; color: #0f2a44; }
+.phone-mockup { width: 300px; height: 600px; background: #0f2a44; border-radius: 40px; margin: 30px auto; padding: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); position: relative; overflow: hidden; }
+.phone-header { background: #14b8a6; color: white; padding: 15px; border-radius: 20px; text-align: center; margin-bottom: 20px; }
+.phone-header h4 { font-size: 16px; }
+.phone-content { background: white; border-radius: 20px; padding: 20px; height: 480px; overflow-y: auto; }
+.location-item { background: #f1f5f9; border-radius: 12px; padding: 15px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; }
+.location-item .info h5 { font-size: 14px; margin-bottom: 4px; }
+.location-item .info p { font-size: 12px; color: #64748b; }
+.location-item .status { background: #14b8a6; color: white; padding: 5px 12px; border-radius: 20px; font-size: 11px; }
+.location-item .status.busy { background: #f59e0b; }
+.location-item .status.full { background: #dc2626; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 40px 0; }
+.stat-card { background: white; padding: 25px; border-radius: 15px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+.stat-card .number { font-size: 36px; font-weight: bold; color: #14b8a6; }
+.stat-card .label { font-size: 14px; color: #64748b; margin-top: 5px; }
+.footer { background: #0f2a44; color: white; text-align: center; padding: 30px; margin-top: 60px; }
+.footer p { color: #8a9bb5; font-size: 14px; }
+.footer .names { color: #14b8a6; margin-top: 10px; }
+</style>
+</head>
+<body>
+<div class="header">
+<h1>Study<span>Space</span></h1>
+<nav>
+<a href="#features" style="color: white; text-decoration: none; margin: 0 15px;">Features</a>
+<a href="#demo" style="color: white; text-decoration: none; margin: 0 15px;">Demo</a>
+<a href="#stats" style="color: white; text-decoration: none; margin: 0 15px;">Stats</a>
+</nav>
+</div>
+
+<div class="container">
+<div class="hero">
+<h2>Find your perfect study spot — in real time</h2>
+<p>StudySpace shows you real-time availability of libraries, coworkings and quiet cafés near you. Filter by noise, Wi-Fi and power outlets. Reserve in one click.</p>
+<button class="btn" onclick="alert('Demo version - Full app coming soon!')">Download App</button>
+</div>
+
+<div class="features" id="features">
+<div class="feature-card">
+<div class="icon">◉</div>
+<h3>Live Availability</h3>
+<p>Real-time seat availability from partner libraries and coworkings. No more walking around.</p>
+</div>
+<div class="feature-card">
+<div class="icon">◎</div>
+<h3>Smart Filters</h3>
+<p>Filter by noise level, Wi-Fi speed, power outlets, natural light and opening hours.</p>
+</div>
+<div class="feature-card">
+<div class="icon">▣</div>
+<h3>One-Click Reserve</h3>
+<p>Book a seat for 2-4 hours with QR check-in. Penalty for no-shows keeps spots free.</p>
+</div>
+<div class="feature-card">
+<div class="icon">☆</div>
+<h3>Data Dashboard</h3>
+<p>Peak hours, occupancy rates and best spots by rating. Perfect for Business Analytics.</p>
+</div>
+</div>
+
+<div class="demo-section" id="demo">
+<h3>📱 App Demo</h3>
+<p style="color: #64748b; margin-bottom: 20px;">This is how the StudySpace app looks:</p>
+<div class="phone-mockup">
+<div class="phone-header">
+<h4>StudySpace</h4>
+<p style="font-size: 12px; margin-top: 5px;">Where to study today?</p>
+</div>
+<div class="phone-content">
+<div class="location-item">
+<div class="info">
+<h5>Biblioteca Central</h5>
+<p>0.3 km • 12 seats free</p>
+</div>
+<div class="status">Available</div>
+</div>
+<div class="location-item">
+<div class="info">
+<h5>Coworking UCM</h5>
+<p>0.6 km • 5 seats free</p>
+</div>
+<div class="status">Available</div>
+</div>
+<div class="location-item">
+<div class="info">
+<h5>Café Ateneo</h5>
+<p>0.9 km • Quiet zone</p>
+</div>
+<div class="status busy">Busy</div>
+</div>
+<div class="location-item">
+<div class="info">
+<h5>Biblioteca UAM</h5>
+<p>1.2 km • 2 seats free</p>
+</div>
+<div class="status busy">Almost Full</div>
+</div>
+<div class="location-item">
+<div class="info">
+<h5>Study Hub Moncloa</h5>
+<p>1.5 km • No seats</p>
+</div>
+<div class="status full">Full</div>
+</div>
+<div class="location-item">
+<div class="info">
+<h5>Café Goya</h5>
+<p>1.8 km • 8 seats free</p>
+</div>
+<div class="status">Available</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="stats" id="stats">
+<div class="stat-card">
+<div class="number">320K</div>
+<div class="label">Students in Madrid</div>
+</div>
+<div class="stat-card">
+<div class="number">68%</div>
+<div class="label">Waste 30+ min searching</div>
+</div>
+<div class="stat-card">
+<div class="number">41%</div>
+<div class="label">Would pay €1-3</div>
+</div>
+<div class="stat-card">
+<div class="number">12%</div>
+<div class="label">Market growth/year</div>
+</div>
+</div>
+</div>
+
+<div class="footer">
+<p>StudySpace - Market Research Workshop Task 1</p>
+<p class="names">Gonzalo Navarro • Niloufar Ghasemi • Jimena García</p>
+<p>Professor Mia • September 2026</p>
+</div>
+</body>
+</html>
