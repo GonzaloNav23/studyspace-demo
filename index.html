@@ -44,11 +44,16 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #f8fafc; color: #
 .how-it-works { background: white; border-radius: 20px; padding: 40px; margin: 40px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
 .how-it-works h3 { font-size: 24px; margin-bottom: 30px; color: #0f2a44; text-align: center; }
 .process-steps { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-.process-step { flex: 1; min-width: 200px; text-align: center; padding: 20px; }
-.process-step .step-number { width: 50px; height: 50px; background: #14b8a6; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: bold; margin: 0 auto 15px; }
-.process-step h4 { font-size: 16px; margin-bottom: 10px; color: #0f2a44; }
-.process-step p { font-size: 13px; color: #64748b; line-height: 1.5; }
-.process-arrow { font-size: 24px; color: #14b8a6; }
+.process-step { flex: 1; min-width: 200px; text-align: center; padding: 30px 20px; border-radius: 15px; cursor: pointer; transition: all 0.3s ease; border: 2px solid transparent; position: relative; }
+.process-step:hover { background: #f0fdfa; border-color: #14b8a6; transform: translateY(-5px); box-shadow: 0 10px 30px rgba(20,184,166,0.15); }
+.process-step.active { background: #f0fdfa; border-color: #14b8a6; }
+.process-step .step-number { width: 60px; height: 60px; background: #14b8a6; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; margin: 0 auto 15px; transition: all 0.3s; }
+.process-step:hover .step-number { background: #0e9e8f; transform: scale(1.1); }
+.process-step h4 { font-size: 18px; margin-bottom: 10px; color: #0f2a44; }
+.process-step .step-icon { font-size: 40px; margin-bottom: 15px; }
+.process-step .step-detail { font-size: 13px; color: #64748b; line-height: 1.5; max-height: 0; overflow: hidden; opacity: 0; transition: all 0.3s; }
+.process-step:hover .step-detail, .process-step.active .step-detail { max-height: 100px; opacity: 1; margin-top: 10px; }
+.process-arrow { font-size: 28px; color: #14b8a6; }
 .booking-section { background: white; border-radius: 20px; padding: 40px; margin: 40px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
 .booking-section h3 { font-size: 24px; margin-bottom: 20px; color: #0f2a44; }
 .booking-flow { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
@@ -166,29 +171,34 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #f8fafc; color: #
 
 <div class="how-it-works" id="how-it-works">
 <h3>How It Works</h3>
+<p style="text-align: center; color: #64748b; margin-bottom: 30px; font-size: 14px;">Hover over each step to see details</p>
 <div class="process-steps">
-<div class="process-step">
+<div class="process-step" onclick="toggleStep(this)">
+<div class="step-icon">🔍</div>
 <div class="step-number">1</div>
 <h4>Search</h4>
-<p>Open the app and allow location. See all nearby study spots in real time.</p>
+<div class="step-detail">Open the app and allow location. See all nearby study spots in real time.</div>
 </div>
 <div class="process-arrow">→</div>
-<div class="process-step">
+<div class="process-step" onclick="toggleStep(this)">
+<div class="step-icon">⚖️</div>
 <div class="step-number">2</div>
 <h4>Compare</h4>
-<p>Check photos, noise level, Wi-Fi speed, power outlets and reviews.</p>
+<div class="step-detail">Check photos, noise level, Wi-Fi speed, power outlets and reviews.</div>
 </div>
 <div class="process-arrow">→</div>
-<div class="process-step">
+<div class="process-step" onclick="toggleStep(this)">
+<div class="step-icon">📅</div>
 <div class="step-number">3</div>
 <h4>Reserve</h4>
-<p>Book a seat for 2-4 hours. Pay €0 or €1.50 at partner locations.</p>
+<div class="step-detail">Book a seat for 2-4 hours. Pay €0 or €1.50 at partner locations.</div>
 </div>
 <div class="process-arrow">→</div>
-<div class="process-step">
+<div class="process-step" onclick="toggleStep(this)">
+<div class="step-icon">📚</div>
 <div class="step-number">4</div>
 <h4>Study</h4>
-<p>Show QR code at entrance. Enjoy your guaranteed quiet spot!</p>
+<div class="step-detail">Show QR code at entrance. Enjoy your guaranteed quiet spot!</div>
 </div>
 </div>
 </div>
@@ -308,5 +318,11 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #f8fafc; color: #
 <p class="names">Gonzalo Navarro • Niloufar Ghasemi • Jimena García</p>
 <p>Professor Mia • September 2026</p>
 </div>
+<script>
+function toggleStep(el) {
+    document.querySelectorAll('.process-step').forEach(s => s.classList.remove('active'));
+    el.classList.add('active');
+}
+</script>
 </body>
 </html>
